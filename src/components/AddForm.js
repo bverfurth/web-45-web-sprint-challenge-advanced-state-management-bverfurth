@@ -26,7 +26,7 @@ const AddForm = (props) => {
     }
   };
 
-  const errorMessage = "state.errorMessage";
+  const errorMessage = state.errorMessage;
 
   return (
     <section>

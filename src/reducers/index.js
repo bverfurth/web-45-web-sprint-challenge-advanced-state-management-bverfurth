@@ -35,12 +35,15 @@ const reducer = (state = initialState, action) => {
     case ADD_SMURFS:
       return {
         ...state,
-        smurfs: [...state.smurfs, actoin.payload],
+        smurfs: [...state.smurfs, action.payload],
       };
     case ERROR:
       return {
         ...state,
+        error: action.payload,
       };
+    default:
+      return state;
   }
 };
 
