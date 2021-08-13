@@ -26,6 +26,21 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         smurfs: action.payload,
       };
+    case FETCH_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    case ADD_SMURFS:
+      return {
+        ...state,
+        smurfs: [...state.smurfs, actoin.payload],
+      };
+    case ERROR:
+      return {
+        ...state,
+      };
   }
 };
 
