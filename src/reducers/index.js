@@ -1,9 +1,33 @@
+import { is } from "@babel/types";
+import {
+  FETCH_START,
+  FETCH_SUCCESS,
+  FETCH_FAIL,
+  ADD_SMURFS,
+  ERROR,
+} from "../actions";
 
 export const initialState = {
-}
+  smurfs: [],
+  isLoading: false,
+  error: "",
+};
 
-const reducer = ()=>{
-}
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        smurfs: action.payload,
+      };
+  }
+};
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
